@@ -138,118 +138,59 @@ All data preparation and analysis scripts were developed and executed in a Googl
 To ensure smooth operation and accurate replication of results, we strongly recommend running the scripts within a Google Colab environment. If you choose to use a different environment (e.g., local PySpark), adjustments to file paths and environment configurations will likely be required.
 
 ## File structure:
-|   .gitattributes
-|   README.md
-|   
-+---BusinessDensity
-|   |   BusinessDensity.pbix
-|   |   Business_Density_Random_Forest.ipynb
-|   |   business_density_random_forest.py
-|   |   Final_lightRail_dataset.csv
-|   |   Supplemental Capstone Report.docx
-|   |   
-|   +---Bussines Density results
-|   |       Business_Sector.csv
-|   |       model_metrics_summary.csv
-|   |       ols_predictions_and_residuals.csv
-|   |       rf_feature_importances.csv
-|   |       sector_change_analysis.csv
-|   |       zip_change_analysis.csv
-|   |       
-|   \---Images
-|           Heatmap.png
-|           OLS Results.png
-|           Rf Results.png
-|           Top Five Zip codes.png
-|           
-+---LightRailStudy
-|   |   Capstone Report.docx
-|   |   DIDRegression.ipynb
-|   |   didregression.py
-|   |   Final_lightRail_dataset.csv
-|   |   LightRail_Dashbroad.pbix
-|   |   
-|   +---images
-|   |       Business_Coefficints.png
-|   |       Business_Parallel_trends.png
-|   |       Business_Scatter.png
-|   |       Dynamic DID Results Log_Business_Density.png
-|   |       Dynamic DID Results Log_HPI.png
-|   |       Dynamic DID Results Log_Median_Value.png
-|   |       Housing_CoefficientPlot_Hpi.png
-|   |       Housing_CoefficientPlot_Medain.png
-|   |       Housing_ParallelTrends_Hpi.png
-|   |       Housing_ParallelTrends_Medain.png
-|   |       Housing_Scatter_HPI.png
-|   |       Housing_Scatter_Medain.png
-|   |       sector.png
-|   |       Sector_differential.png
-|   |       Sector_Phase.png
-|   |       
-|   \---light rail results
-|           A1_Coefficients.csv
-|           A2_Coefficients.csv
-|           B_Coefficients.csv
-|           DID_Log_Business_Density_Full_Results.csv
-|           DID_Log_HPI_Full_Results.csv
-|           DID_Log_Median_Value_Full_Results.csv
-|           
-\---master_dataset
-    |   Combined_CBPData_2000-23.csv
-    |   housingDataComplete.csv
-    |   masterDataset.ipynb
-    |   masterdataset.py
-    |   USA_ZIP_Codes.csv
-    |   zip_rail_proximity_features.csv
-    |   
-    +---CBP__Data_Final
-    |   |   countybusinesspatterns_details (1).py
-    |   |   CountyBusinessPatterns_Details.ipynb
-    |   |   geonames-postal-code.csv
-    |   |   
-    |   \---CBP_idn_Details
-    |           zbp00detail.txt
-    |           zbp01detail.txt
-    |           zbp02detail.txt
-    |           zbp03detail.txt
-    |           zbp04detail.txt
-    |           zbp05detail.txt
-    |           zbp06detail.txt
-    |           zbp07detail.txt
-    |           zbp08detail.txt
-    |           Zbp09detail.txt
-    |           zbp10detail.txt
-    |           zbp11detail.txt
-    |           zbp12detail.txt
-    |           zbp13detail.txt
-    |           zbp14detail.txt
-    |           zbp15detail.txt
-    |           zbp16detail.txt
-    |           zbp17detail.txt
-    |           zbp18detail.txt
-    |           zbp19detail.txt
-    |           zbp20detail.txt
-    |           zbp21detail.txt
-    |           zbp22detail.txt
-    |           zbp23detail.txt
-    |           
-    +---Housing_Data
-    |       geonames-postal-code.csv
-    |       HousingData.csv
-    |       housingdataclean (1).py
-    |       housingDataClean.ipynb
-    |       hpi_at_zip5.xlsx
-    |       ZillowData.ipynb
-    |       zillowdata.py
-    |       Zip_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv
-    |       
-    \---Light_Rail_Data
-            geonames-postal-code.csv
-            LightRailData.ipynb
-            lightraildata.py
-            Upadated_ZipCodes.csv
-            Updated_lightRail.csv
-            ValleyMetroRailStations_-7532295976615093627.csv
+* **.gitattributes**
+* **README.md**
+* **BusinessDensity/**
+    * *BusinessDensity.pbix* (Power BI Desktop File)
+    * *Business_Density_Random_Forest.ipynb* (Random Forest Model Notebook)
+    * *business_density_random_forest.py* (Python Script for RF Model)
+    * *Final_lightRail_dataset.csv* (Input Data)
+    * *Supplemental Capstone Report.docx* (Report Documentation)
+    * **Bussines Density results/**
+        * *Business_Sector.csv*
+        * *model_metrics_summary.csv*
+        * *ols_predictions_and_residuals.csv*
+        * *rf_feature_importances.csv* (Feature Importance Results)
+        * *sector_change_analysis.csv*
+        * *zip_change_analysis.csv*
+    * **Images/**
+        * *Heatmap.png*
+        * *OLS Results.png*
+        * *Rf Results.png*
+        * *Top Five Zip codes.png*
+* **LightRailStudy/**
+    * *Capstone Report.docx* (Main Report Documentation)
+    * *DIDRegression.ipynb* (Difference-in-Differences Regression Notebook)
+    * *didregression.py* (Python Script for DiD Model)
+    * *Final_lightRail_dataset.csv* (Input Data)
+    * *LightRail_Dashbroad.pbix* (Power BI Dashboard)
+    * **images/**
+        * *(Contains various coefficient plots, parallel trends charts, and scatter plots related to business density and housing price index)*
+    * **light rail results/**
+        * *A1_Coefficients.csv*
+        * *B_Coefficients.csv*
+        * *DID_Log_Business_Density_Full_Results.csv*
+        * *DID_Log_HPI_Full_Results.csv*
+        * *DID_Log_Median_Value_Full_Results.csv*
+* **master_dataset/**
+    * *Combined_CBPData_2000-23.csv* (Final Master Business Data)
+    * *housingDataComplete.csv* (Final Master Housing Data)
+    * *masterDataset.ipynb* (Data Combination Notebook)
+    * *masterdataset.py* (Python Script for Data Combination)
+    * *USA_ZIP_Codes.csv*
+    * *zip_rail_proximity_features.csv* (Zip code features derived from rail proximity)
+    * **CBP__Data_Final/**
+        * *CountyBusinessPatterns_Details.ipynb* (Notebook for processing raw CBP data)
+        * **CBP_idn_Details/**
+            * *zbp00detail.txt* through *zbp23detail.txt* (Raw Census Business Patterns data files)
+    * **Housing_Data/**
+        * *HousingData.csv*
+        * *housingDataClean.ipynb* (Notebook for cleaning housing data)
+        * *hpi_at_zip5.xlsx* (House Price Index data)
+        * *Zip_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv* (Zillow Home Value Index data)
+    * **Light_Rail_Data/**
+        * *LightRailData.ipynb* (Notebook for processing raw light rail data)
+        * *ValleyMetroRailStations_....csv* (Raw Light Rail Station locations)
 
   
 
