@@ -136,3 +136,120 @@ EXECUTION ENVIRONMENT NOTE
 All data preparation and analysis scripts were developed and executed in a Google Colab environment over several months. Many scripts rely on files created and immediately reused within the same execution session.
 
 To ensure smooth operation and accurate replication of results, we strongly recommend running the scripts within a Google Colab environment. If you choose to use a different environment (e.g., local PySpark), adjustments to file paths and environment configurations will likely be required.
+
+## File structure:
+|   .gitattributes
+|   README.md
+|   
++---BusinessDensity
+|   |   BusinessDensity.pbix
+|   |   Business_Density_Random_Forest.ipynb
+|   |   business_density_random_forest.py
+|   |   Final_lightRail_dataset.csv
+|   |   Supplemental Capstone Report.docx
+|   |   
+|   +---Bussines Density results
+|   |       Business_Sector.csv
+|   |       model_metrics_summary.csv
+|   |       ols_predictions_and_residuals.csv
+|   |       rf_feature_importances.csv
+|   |       sector_change_analysis.csv
+|   |       zip_change_analysis.csv
+|   |       
+|   \---Images
+|           Heatmap.png
+|           OLS Results.png
+|           Rf Results.png
+|           Top Five Zip codes.png
+|           
++---LightRailStudy
+|   |   Capstone Report.docx
+|   |   DIDRegression.ipynb
+|   |   didregression.py
+|   |   Final_lightRail_dataset.csv
+|   |   LightRail_Dashbroad.pbix
+|   |   
+|   +---images
+|   |       Business_Coefficints.png
+|   |       Business_Parallel_trends.png
+|   |       Business_Scatter.png
+|   |       Dynamic DID Results Log_Business_Density.png
+|   |       Dynamic DID Results Log_HPI.png
+|   |       Dynamic DID Results Log_Median_Value.png
+|   |       Housing_CoefficientPlot_Hpi.png
+|   |       Housing_CoefficientPlot_Medain.png
+|   |       Housing_ParallelTrends_Hpi.png
+|   |       Housing_ParallelTrends_Medain.png
+|   |       Housing_Scatter_HPI.png
+|   |       Housing_Scatter_Medain.png
+|   |       sector.png
+|   |       Sector_differential.png
+|   |       Sector_Phase.png
+|   |       
+|   \---light rail results
+|           A1_Coefficients.csv
+|           A2_Coefficients.csv
+|           B_Coefficients.csv
+|           DID_Log_Business_Density_Full_Results.csv
+|           DID_Log_HPI_Full_Results.csv
+|           DID_Log_Median_Value_Full_Results.csv
+|           
+\---master_dataset
+    |   Combined_CBPData_2000-23.csv
+    |   housingDataComplete.csv
+    |   masterDataset.ipynb
+    |   masterdataset.py
+    |   USA_ZIP_Codes.csv
+    |   zip_rail_proximity_features.csv
+    |   
+    +---CBP__Data_Final
+    |   |   countybusinesspatterns_details (1).py
+    |   |   CountyBusinessPatterns_Details.ipynb
+    |   |   geonames-postal-code.csv
+    |   |   
+    |   \---CBP_idn_Details
+    |           zbp00detail.txt
+    |           zbp01detail.txt
+    |           zbp02detail.txt
+    |           zbp03detail.txt
+    |           zbp04detail.txt
+    |           zbp05detail.txt
+    |           zbp06detail.txt
+    |           zbp07detail.txt
+    |           zbp08detail.txt
+    |           Zbp09detail.txt
+    |           zbp10detail.txt
+    |           zbp11detail.txt
+    |           zbp12detail.txt
+    |           zbp13detail.txt
+    |           zbp14detail.txt
+    |           zbp15detail.txt
+    |           zbp16detail.txt
+    |           zbp17detail.txt
+    |           zbp18detail.txt
+    |           zbp19detail.txt
+    |           zbp20detail.txt
+    |           zbp21detail.txt
+    |           zbp22detail.txt
+    |           zbp23detail.txt
+    |           
+    +---Housing_Data
+    |       geonames-postal-code.csv
+    |       HousingData.csv
+    |       housingdataclean (1).py
+    |       housingDataClean.ipynb
+    |       hpi_at_zip5.xlsx
+    |       ZillowData.ipynb
+    |       zillowdata.py
+    |       Zip_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv
+    |       
+    \---Light_Rail_Data
+            geonames-postal-code.csv
+            LightRailData.ipynb
+            lightraildata.py
+            Upadated_ZipCodes.csv
+            Updated_lightRail.csv
+            ValleyMetroRailStations_-7532295976615093627.csv
+
+  
+
