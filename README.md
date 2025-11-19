@@ -25,6 +25,7 @@ Investigates whether business density is primarily driven by historical trends o
 This serves as a foundational analysis to better understand the variables used in the first study.
 
 ## REPRODUCTION GUIDE: RECREATING THE ANALYSIS
+### Data preparation
 The data preparation for these projects was executed using PySpark within the Google Colab environment. To reproduce the final master dataset and run the analysis, follow the steps below in the specified order.
 
 NOTE: Ensure you have access to a PySpark environment (such as Google Colab or a local setup) to run the data preparation scripts.
@@ -75,4 +76,5 @@ USA_Zip_Codes
 
 The final analytical dataset, named 'Final_lightRail_dataset', can be found in the 'projects' folder and is used for the regression analysis.
 
-
+### Phoenix Light Rail Study:
+### Business Density Analysis:
