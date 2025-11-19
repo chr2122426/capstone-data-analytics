@@ -24,7 +24,7 @@ Investigates whether business density is primarily driven by historical trends o
 ### Purpose: 
 This serves as a foundational analysis to better understand the variables used in the first study.
 
-### REPRODUCTION GUIDE: RECREATING THE ANALYSIS
+## REPRODUCTION GUIDE: RECREATING THE ANALYSIS
 The data preparation for these projects was executed using PySpark within the Google Colab environment. To reproduce the final master dataset and run the analysis, follow the steps below in the specified order.
 
 NOTE: Ensure you have access to a PySpark environment (such as Google Colab or a local setup) to run the data preparation scripts.
