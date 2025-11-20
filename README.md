@@ -140,60 +140,98 @@ All data preparation and analysis scripts were developed and executed in a Googl
 
 To ensure smooth operation and accurate replication of results, we strongly recommend running the scripts within a Google Colab environment. If you choose to use a different environment (e.g., local PySpark), adjustments to file paths and environment configurations will likely be required.
 
-## File structure:
 * **.gitattributes**
 * **README.md**
-* **BusinessDensity/**
-    * *BusinessDensity.pbix* (Power BI Desktop File)
-    * *Business_Density_Random_Forest.ipynb* (Random Forest Model Notebook)
-    * *business_density_random_forest.py* (Python Script for RF Model)
-    * *Final_lightRail_dataset.csv* (Input Data)
-    * *Supplemental Capstone Report.docx* (Report Documentation)
+* **BusinessDensity/** (Random Forest & OLS Analysis)
+    * *BusinessDensity.pbix* (Power BI Dashboard for Business Density)
     * **Bussines Density results/**
         * *Business_Sector.csv*
         * *model_metrics_summary.csv*
         * *ols_predictions_and_residuals.csv*
-        * *rf_feature_importances.csv* (Feature Importance Results)
+        * *rf_feature_importances.csv*
         * *sector_change_analysis.csv*
         * *zip_change_analysis.csv*
+    * **data/**
+        * *Final_lightRail_dataset.csv* (Input data for modeling)
+    * **documentation/**
+        * *Supplemental Capstone Report.docx*
     * **Images/**
         * *Heatmap.png*
         * *OLS Results.png*
         * *Rf Results.png*
         * *Top Five Zip codes.png*
-* **LightRailStudy/**
-    * *Capstone Report.docx* (Main Report Documentation)
-    * *DIDRegression.ipynb* (Difference-in-Differences Regression Notebook)
-    * *didregression.py* (Python Script for DiD Model)
-    * *Final_lightRail_dataset.csv* (Input Data)
-    * *LightRail_Dashbroad.pbix* (Power BI Dashboard)
+    * **scripts/**
+        * *Business_Density_Random_Forest.ipynb* (Random Forest Model Notebook)
+        * *business_density_random_forest.py* (Python Script for RF Model)
+* **LightRailStudy/** (Difference-in-Differences Analysis)
+    * *LightRail_Dashbroad.pbix* (Power BI Dashboard for DiD)
+    * **data/**
+        * *Final_lightRail_dataset.csv* (Input data for DiD analysis)
+    * **documentation/**
+        * *Capstone Report.docx*
     * **images/**
-        * *(Contains various coefficient plots, parallel trends charts, and scatter plots related to business density and housing price index)*
+        * *Business_Coefficints.png*
+        * *Business_Parallel_trends.png*
+        * *Business_Scatter.png*
+        * *Dynamic DID Results Log_Business_Density.png*
+        * *Dynamic DID Results Log_HPI.png*
+        * *Dynamic DID Results Log_Median_Value.png*
+        * *Housing_CoefficientPlot_Hpi.png*
+        * *Housing_CoefficientPlot_Medain.png*
+        * *Housing_ParallelTrends_Hpi.png*
+        * *Housing_ParallelTrends_Medain.png*
+        * *Housing_Scatter_HPI.png*
+        * *Housing_Scatter_Medain.png*
+        * *sector.png*
+        * *Sector_differential.png*
+        * *Sector_Phase.png*
     * **light rail results/**
         * *A1_Coefficients.csv*
+        * *A2_Coefficients.csv*
         * *B_Coefficients.csv*
         * *DID_Log_Business_Density_Full_Results.csv*
         * *DID_Log_HPI_Full_Results.csv*
         * *DID_Log_Median_Value_Full_Results.csv*
-* **master_dataset/**
-    * *Combined_CBPData_2000-23.csv* (Final Master Business Data)
-    * *housingDataComplete.csv* (Final Master Housing Data)
-    * *masterDataset.ipynb* (Data Combination Notebook)
-    * *masterdataset.py* (Python Script for Data Combination)
-    * *USA_ZIP_Codes.csv*
-    * *zip_rail_proximity_features.csv* (Zip code features derived from rail proximity)
-    * **CBP__Data_Final/**
-        * *CountyBusinessPatterns_Details.ipynb* (Notebook for processing raw CBP data)
-        * **CBP_idn_Details/**
-            * *zbp00detail.txt* through *zbp23detail.txt* (Raw Census Business Patterns data files)
-    * **Housing_Data/**
-        * *HousingData.csv*
-        * *housingDataClean.ipynb* (Notebook for cleaning housing data)
-        * *hpi_at_zip5.xlsx* (House Price Index data)
-        * *Zip_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv* (Zillow Home Value Index data)
-    * **Light_Rail_Data/**
-        * *LightRailData.ipynb* (Notebook for processing raw light rail data)
-        * *ValleyMetroRailStations_....csv* (Raw Light Rail Station locations)
+    * **scripts/**
+        * *DIDRegression.ipynb* (DiD Regression Notebook)
+        * *didregression.py* (Python Script for DiD Model)
+* **master_dataset/** (Data Preparation Pipeline)
+    * **CBP__Data_Final/** (Census Business Patterns Data)
+        * **data/**
+            * *geonames-postal-code.csv*
+            * **CBP_idn_Details/**
+                * *zbp00detail.txt* through *zbp23detail.txt* (Raw Census data files)
+        * **scripts/**
+            * *countybusinesspatterns_details (1).py*
+            * *CountyBusinessPatterns_Details.ipynb* (Notebook for processing CBP data)
+    * **Housing_Data/** (Housing Price Data)
+        * **data/**
+            * *geonames-postal-code.csv*
+            * *HousingData.csv*
+            * *hpi_at_zip5.xlsx* (House Price Index data)
+            * *Zip_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv* (Zillow Home Value Index data)
+        * **scripts/**
+            * *housingdataclean (1).py*
+            * *housingDataClean.ipynb* (Notebook for cleaning housing data)
+            * *ZillowData.ipynb*
+            * *zillowdata.py*
+    * **Light_Rail_Data/** (Light Rail Proximity Data)
+        * **data/**
+            * *geonames-postal-code.csv*
+            * *Upadated_ZipCodes.csv*
+            * *Updated_lightRail.csv*
+            * *ValleyMetroRailStations_....csv* (Raw Light Rail Station data)
+        * **scripts/**
+            * *LightRailData.ipynb* (Notebook for processing rail data)
+            * *lightraildata.py*
+    * **processed data/** (Final, Cleaned Master Datasets)
+        * *Combined_CBPData_2000-23.csv* (Final Master Business Data)
+        * *housingDataComplete.csv* (Final Master Housing Data)
+        * *USA_ZIP_Codes.csv*
+        * *zip_rail_proximity_features.csv*
+    * **scripts/**
+        * *masterDataset.ipynb* (Notebook for combining processed data)
+        * *masterdataset.py*
 
 Author name: Chris Coker
 
