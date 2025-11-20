@@ -196,8 +196,8 @@ sns.set(style="whitegrid")
 
 res = results_did['Log_Median_Value'] # Use the Log_Median_Value result
 
-# 1. Prepare Data
-did_vars = ['DID_Impl', 'DID_Post'] # Corrected variable names
+# Prepare Data
+did_vars = ['DID_Impl', 'DID_Post']
 coef = res.params[did_vars]
 conf = res.conf_int().loc[did_vars]
 conf.columns = ['CI_lower', 'CI_upper']
@@ -212,7 +212,7 @@ did_results['Variable'] = did_results['Variable'].replace({
     'DID_Post': 'Post-Implementation Phase'
 })
 
-# 2. Plot
+# Plot
 plt.figure(figsize=(8, 5))
 sns.barplot(
     x='Variable',
@@ -429,7 +429,7 @@ did_results['Variable'] = did_results['Variable'].replace({
     'DID_Post': 'Post-Implementation Phase'
 })
 
-# 2. Plot
+# Plot
 plt.figure(figsize=(8, 5))
 sns.barplot(
     x='Variable',
@@ -446,7 +446,7 @@ plt.ylabel("Coefficient Estimate (Log Change)")
 plt.tight_layout()
 plt.show()
 
-#  Define the relevant DDD terms for the POST phase
+# Define the relevant DDD terms for the POST phase
 post_ddd_terms = ['DDD_Retail_Post', 'DDD_Food_Post']
 
 # Extract coefficients and confidence intervals from the result object (res_h1d)
@@ -560,10 +560,10 @@ sns.set_style("whitegrid")
 ax = sns.barplot(
     x='Label',
     y='Coefficient',
-    hue='Significant',  # Use significance for color distinction
+    hue='Significant',
     data=ddd_full_results,
-    palette={True: 'green', False: 'lightgray'}, # Customize colors
-    dodge=False, # Important: disable dodge if you want simple bars
+    palette={True: 'green', False: 'lightgray'},
+    dodge=False,
     alpha=0.8
 )
 
@@ -584,7 +584,7 @@ plt.ylabel('DDD Coefficient Estimate (Log Change)')
 plt.xlabel('Sector and Phase')
 plt.xticks(rotation=45, ha='right')
 
-# Remove the significance legend as it's often better to interpret CIs directly
+# Remove the significance legend
 ax.legend_.remove()
 plt.tight_layout()
 plt.show()
@@ -594,14 +594,14 @@ def save_model_summary_to_csv(res, filename, cluster_col='ZIP'):
     Extracts key results (coef, std err, p-value, CIs) from a statsmodels
     result object and saves them to a CSV file.
     """
-    # 1. Extract the core summary table
+    # Extract the core summary table
     results_df = pd.DataFrame({
         'Coefficient': res.params,
         'Std_Error': res.bse,
         'P_Value': res.pvalues
     })
 
-    # 2. Add 95% Confidence Intervals
+    # Add 95% Confidence Intervals
     conf_int = res.conf_int()
     results_df['CI_Lower_95'] = conf_int.iloc[:, 0]
     results_df['CI_Upper_95'] = conf_int.iloc[:, 1]
@@ -609,7 +609,7 @@ def save_model_summary_to_csv(res, filename, cluster_col='ZIP'):
     # Reset index to make the variable name a column
     results_df = results_df.reset_index().rename(columns={'index': 'Variable'})
 
-    # 3. Add model information (optional but helpful)
+    #  Add model information (optional but helpful)
     results_df['R_Squared'] = res.rsquared
     results_df['Num_Observations'] = res.nobs
     results_df['Cluster_Variable'] = cluster_col # Assuming clustering by ZIP
