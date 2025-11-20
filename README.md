@@ -195,5 +195,5 @@ To ensure smooth operation and accurate replication of results, we strongly reco
         * *LightRailData.ipynb* (Notebook for processing raw light rail data)
         * *ValleyMetroRailStations_....csv* (Raw Light Rail Station locations)
 
-  
+Author name: Chris Coker
 
