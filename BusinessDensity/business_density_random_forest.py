@@ -276,9 +276,9 @@ print(f"Test set size: {len(X_test)}")
 # Using a moderate number of estimators for speed and good performance
 rf_model = RandomForestRegressor(n_estimators=100,
                                   random_state=42,
-                                  n_jobs=-1, # Use all cores
-                                  max_depth=10, # Limiting depth for regularization/speed
-                                  min_samples_leaf=5) # Ensure robust split
+                                  n_jobs=-1,
+                                  max_depth=10,
+                                  min_samples_leaf=5)
 
 
 rf_model.fit(X_train, y_train)
